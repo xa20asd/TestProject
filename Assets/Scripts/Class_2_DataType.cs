@@ -20,4 +20,16 @@ public class Class_2_DataType : MonoBehaviour
     public string character = "Monster";
     public bool isDead = false;
     public bool gameOver = true;
+
+    // 整數資料類型
+    public byte lv = 16;   //byte 範圍 0~255 大小 8 byte
+    public uint coin = 9999; // uint 範圍0~4***，大小 32byte
+    public long items = 3000; // long 範圍 0~92***，大小 64byte
+
+    //字串與字元
+    public string playerName = "Honordes";  //字串: 儲存多個字元，使用""
+    public char a = 'a';                    //字元: 儲存1個字元，使用''
+
+    //溢位
+    //public sbyte num = 128;   //溢位導致錯誤產生
 }
