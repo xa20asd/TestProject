@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -89,6 +91,7 @@ public class Class_3_Operator : MonoBehaviour
         Debug.Log(numberA % numberB);
         #endregion
 
+        #region 比較運算子
         Debug.Log("<color=orange>---比較運算子---</color>");
         //比較運算子，使用後會得到boolean值
         int numberC = 100, numberD = 999;
@@ -99,5 +102,29 @@ public class Class_3_Operator : MonoBehaviour
         Debug.Log(numberC <= numberD);
         Debug.Log(numberC == numberD);
         Debug.Log(numberC != numberD);
+        #endregion
+
+        #region 布林值邏輯運算子
+        Debug.Log("<color=red>---布林值邏輯運算子---</color>");
+        //邏輯否定:將布林值變成相反的值
+        Debug.Log(!true);
+        Debug.Log(!false);
+        bool boolVarTrue = true, boolVarFalse = false;
+        Debug.Log(!boolVarTrue);
+        Debug.Log(!boolVarFalse);
+
+        Debug.Log("<color=green>---&& ||---</color>");
+        // && 比較2個boolean，只要有一個false就是false
+        Debug.Log(true && true);
+        Debug.Log(true && false);
+        Debug.Log(false && true);
+        Debug.Log(false && false);
+        // || 比較2個boolean，只要有一個true就是true
+        Debug.Log(true || true);
+        Debug.Log(true || false);
+        Debug.Log(false || true);
+        Debug.Log(false || false);
+        #endregion
+
     }
 }
