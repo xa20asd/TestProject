@@ -252,11 +252,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 764183919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e35fc57ef4a1647ac2920f817f34e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a6a8bdacb790664e96fdf090e79eab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  season: 1
-  item: 15
+  hp: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

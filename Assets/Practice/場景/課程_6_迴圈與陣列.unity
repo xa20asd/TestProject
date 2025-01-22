@@ -160,27 +160,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 479449209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53de70c82754b54496de037338d636c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e559f7e7d2d5c043b543c4c9775137f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card1: "\u76AE\u5361\u4E18"
-  card2: "\u5C0F\u706B\u9F8D"
-  card3: "\u5361\u6BD4\u7378"
-  cards:
-  - "\u6C34\u8E8D\u9B5A"
-  - "\u6728\u5B88\u5BAE"
-  - "\u50B2\u9AA8\u71D5"
-  - "\u6CE2\u52A0\u66FC"
-  deck1:
-  - 
-  - 
-  - 
-  - 
-  - 
-  deck2:
-  - "\u8DEF\u5947\u4E9E"
-  - "\u5C0F\u9059"
-  - "\u706B\u96C9\u96DE"
 --- !u!1 &1237228338
 GameObject:
   m_ObjectHideFlags: 0
