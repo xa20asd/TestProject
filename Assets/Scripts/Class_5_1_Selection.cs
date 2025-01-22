@@ -1,111 +1,111 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-//©R¦WªÅ¶¡
-//±NÃş§O¤ÀÃş¡AÃş¦ü­Ü®wªº·§©À¡A¤£¦P­Ü®w¥i¥H¦³¬Û¦P¦WºÙÃş§O
-//»yªk: namespace ©R¦WªÅ¶¡¦WºÙ {¤º®e}
+//å‘½åç©ºé–“
+//å°‡é¡åˆ¥åˆ†é¡ï¼Œé¡ä¼¼å€‰åº«çš„æ¦‚å¿µï¼Œä¸åŒå€‰åº«å¯ä»¥æœ‰ç›¸åŒåç¨±é¡åˆ¥
+//èªæ³•: namespace å‘½åç©ºé–“åç¨± {å…§å®¹}
 namespace honordes
 {
     /// <summary>
-    /// ¿ï¨ú³¯­z¦¡ Selection Statement
-    /// 1. if §PÂ_¦¡
-    /// 2. Switch §PÂ_¦¡
+    /// é¸å–é™³è¿°å¼ Selection Statement
+    /// 1. if åˆ¤æ–·å¼
+    /// 2. Switch åˆ¤æ–·å¼
     /// </summary>
     public class Class_5_1_Selection : MonoBehaviour
     {
 
-        [SerializeField, Header("¬O§_¶}ªù")]
+        [SerializeField, Header("æ˜¯å¦é–‹é–€")]
         private bool isOpen;
 
-        [SerializeField, Header("¤À¼Æ"), Range(0, 100)]
+        [SerializeField, Header("åˆ†æ•¸"), Range(0, 100)]
         private int score = 100;
 
-        [SerializeField, Header("ªZ¾¹")]
+        [SerializeField, Header("æ­¦å™¨")]
         private string weapon;
 
         private void Awake()
         {
-            // if §PÂ_¦¡
-            // if (¥¬ªL­È)
+            // if åˆ¤æ–·å¼
+            // if (å¸ƒæ—å€¼)
             if (true)
             {
-                Debug.Log("·íboolean¬°True");
+                Debug.Log("ç•¶booleanç‚ºTrue");
             }
-            //§Ö³t§¹¦¨: ¿é¤Jif ¿ï¨ú
+            //å¿«é€Ÿå®Œæˆ: è¼¸å…¥if é¸å–
             if (false)
             {
-                Debug.Log("·íboolean¬°false");
+                Debug.Log("ç•¶booleanç‚ºfalse");
             }
         }
 
-        //§ó·s¨Æ¥ó: ¤@¬íÄÁ°õ¦æ¬ù60¦¸( 60FPS) Frame per Second
+        //æ›´æ–°äº‹ä»¶: ä¸€ç§’é˜åŸ·è¡Œç´„60æ¬¡( 60FPS) Frame per Second
         private void Update()
         {
-            //±`¥Î§Ö±¶Áä
-            //1.®æ¦¡¤Æ  ctrl + K D
-            //2. µ{¦¡½X¤ù¬q ctrl + K S  ¿ïregion
-            #region §PÂ_¦¡if
-            Debug.Log("<color=red>§ó·s¨Æ¥ó</color>");
+            //å¸¸ç”¨å¿«æ·éµ
+            //1.æ ¼å¼åŒ–  ctrl + K D
+            //2. ç¨‹å¼ç¢¼ç‰‡æ®µ ctrl + K S  é¸region
+            #region åˆ¤æ–·å¼if
+            Debug.Log("<color=red>æ›´æ–°äº‹ä»¶</color>");
 
-            //¦pªGisOpenµ¥©ó True¡A´NÅã¥Ü¤w¸g¶}ªù
+            //å¦‚æœisOpenç­‰æ–¼ Trueï¼Œå°±é¡¯ç¤ºå·²ç¶“é–‹é–€
             if (isOpen)
             {
-                Debug.Log("<color=green>¤w¸g¶}ªù</color>");
+                Debug.Log("<color=green>å·²ç¶“é–‹é–€</color>");
             }
 
-            //§_«hisOpenµ¥©ófalse¡A´NÅã¥ÜªùÃö¤F
+            //å¦å‰‡isOpenç­‰æ–¼falseï¼Œå°±é¡¯ç¤ºé–€é—œäº†
             else
             {
-                Debug.Log("<color=green>ªùÃö¤F</color>");
+                Debug.Log("<color=green>é–€é—œäº†</color>");
             }
 
-            //¤ñ¸û¹Bºâ¤l¡AÅŞ¿è¹Bºâ¤lµ²ªG¬°boolean
-            // ¤À¼Æ>= 60 ³q¹L
+            //æ¯”è¼ƒé‹ç®—å­ï¼Œé‚è¼¯é‹ç®—å­çµæœç‚ºboolean
+            // åˆ†æ•¸>= 60 é€šé
             if (score >= 60)
             {
-                Debug.Log("<color=orange>®¥³ßC#³q¹L¤F</color>");
+                Debug.Log("<color=orange>æ­å–œC#é€šéäº†</color>");
             }
-            // ¤À¼Æ>= 40 ¦³¸É¦Ò¾÷·|
+            // åˆ†æ•¸>= 40 æœ‰è£œè€ƒæ©Ÿæœƒ
             else if (score >= 40)
             {
-                Debug.Log("<color=orange>§A¥i¥H¸É¦Òªº</color>");
+                Debug.Log("<color=orange>ä½ å¯ä»¥è£œè€ƒçš„</color>");
             }
-            // ¤À¼Æ>= 20 ¦³¸É¦Ò¾÷·|¡A¦ı­nÃB¥~°µ­Ó¤p±MÃD¨Ó¸É¤À
+            // åˆ†æ•¸>= 20 æœ‰è£œè€ƒæ©Ÿæœƒï¼Œä½†è¦é¡å¤–åšå€‹å°å°ˆé¡Œä¾†è£œåˆ†
             else if (score >= 20)
             {
-                Debug.Log("<color=orange>§A¥i¥H¸É¦Òªº¡A¦ı­nÃB¥~°µ¤p±MÃD¨Ó¸É¤À</color>");
+                Debug.Log("<color=orange>ä½ å¯ä»¥è£œè€ƒçš„ï¼Œä½†è¦é¡å¤–åšå°å°ˆé¡Œä¾†è£œåˆ†</color>");
             }
-            //§_«h¡A³Q·í±¼
+            //å¦å‰‡ï¼Œè¢«ç•¶æ‰
             else
             {
-                Debug.Log("<color=orange>«Ü¥i±¤C#³Q·í¤F</color>");
+                Debug.Log("<color=orange>å¾ˆå¯æƒœC#è¢«ç•¶äº†</color>");
             }
             #endregion
 
-            #region §PÂ_¦¡switch
-            //switch §PÂ_¦¡
-            //switch (­n§PÂ_ªº­È) {³¯­z¦¡}
+            #region åˆ¤æ–·å¼switch
+            //switch åˆ¤æ–·å¼
+            //switch (è¦åˆ¤æ–·çš„å€¼) {é™³è¿°å¼}
             switch (weapon)
             {
-                //case ­È:
-                //·í§PÂ_ªº­Èµ¥©ó­È®É·|°õ¦æ³o¸Ì
-                //break;  ¸õ¥X§PÂ_¦¡
-                case "¤p¤M":
-                    //ªZ¾¹µ¥©ó¤p¤M¡AÅã¥Ü§ğÀ»¤O¬°20
-                    Debug.Log("<color=purple>§ğÀ»¤O: 20</color>");
+                //case å€¼:
+                //ç•¶åˆ¤æ–·çš„å€¼ç­‰æ–¼å€¼æ™‚æœƒåŸ·è¡Œé€™è£¡
+                //break;  è·³å‡ºåˆ¤æ–·å¼
+                case "å°åˆ€":
+                    //æ­¦å™¨ç­‰æ–¼å°åˆ€ï¼Œé¡¯ç¤ºæ”»æ“ŠåŠ›ç‚º20
+                    Debug.Log("<color=purple>æ”»æ“ŠåŠ›: 20</color>");
                     break;
-                //ªZ¾¹µ¥©ó¤j¤M¡AÅã¥Ü§ğÀ»¤O¬°35
-                case "¤j¤M":
-                    Debug.Log("<color=purple>§ğÀ»¤O: 35</color>");
+                //æ­¦å™¨ç­‰æ–¼å¤§åˆ€ï¼Œé¡¯ç¤ºæ”»æ“ŠåŠ›ç‚º35
+                case "å¤§åˆ€":
+                    Debug.Log("<color=purple>æ”»æ“ŠåŠ›: 35</color>");
                     break;
-                //ªZ¾¹µ¥©ó¶w¤M¡AÅã¥Ü§ğÀ»¤O¬°25
-                case "¶w¤M":
-                    Debug.Log("<color=purple>§ğÀ»¤O: 25</color>");
+                //æ­¦å™¨ç­‰æ–¼éˆåˆ€ï¼Œé¡¯ç¤ºæ”»æ“ŠåŠ›ç‚º25
+                case "éˆåˆ€":
+                    Debug.Log("<color=purple>æ”»æ“ŠåŠ›: 25</color>");
                     break;
 
-                // ·íweapon ªº­È¤£µ¥©ó¤W­±ªº©Ò¦³­È«h·|°õ¦æ¤U¦Cµ{¦¡½X
+                // ç•¶weapon çš„å€¼ä¸ç­‰æ–¼ä¸Šé¢çš„æ‰€æœ‰å€¼å‰‡æœƒåŸ·è¡Œä¸‹åˆ—ç¨‹å¼ç¢¼
                 default:
-                    Debug.Log("<color=purple>µL§ğÀ»¤O</color>");
+                    Debug.Log("<color=purple>ç„¡æ”»æ“ŠåŠ›</color>");
                     break;
             } 
             #endregion
