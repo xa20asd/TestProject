@@ -36,7 +36,7 @@ namespace honordes
             //存取陣列 Set、Get
             //Get 取得陣列的資料
             //陣列名稱{編號}
-            Debug.Log($"<color=aqua>Cards的第3張卡牌:{cards[2]}</color>");
+            //Debug.Log($"<color=aqua>Cards的第3張卡牌:{cards[2]}</color>");
             //超出陣列範圍，會導致錯誤
             //錯誤會導致當機、閃退、不符合預期的結果或者不執行下方程式
 
@@ -61,6 +61,8 @@ namespace honordes
             Debug.Log($"<color=yellow>編號[1,0,1]的道具:{shop[1, 0, 1]}</color>");
             #endregion
 
+
+            #region 獲得陣列的長度或維度
             //獲得陣列的長度或維度
             //一維~多維陣列的長度: 陣列名稱.Length
             Debug.Log($"<color=red>一維陣列長度:{deck2.Length}</color>");
@@ -70,7 +72,38 @@ namespace honordes
             //陣列的維度: 陣列名稱.Rank
             Debug.Log($"<color=red>一維陣列維度:{deck2.Rank}</color>");
             Debug.Log($"<color=red>二維陣列維度:{inventory.Rank}</color>");
-            Debug.Log($"<color=red>三維陣列維度:{shop.Rank}</color>");
+            Debug.Log($"<color=red>三維陣列維度:{shop.Rank}</color>"); 
+            #endregion
         }
+
+
+
+        #region 取得不規則陣列的值
+        private int[][] numbers = new int[2][];
+        private int[][,] count = new int[2][,];
+
+        private void Start()
+        {
+            numbers[0] = new int[] { 1, 3, 5 };
+            numbers[1] = new int[] { 9, 8 };
+
+            //取得數字 3與9
+            Debug.Log($"<color=aqua>不規則陣列的數字 3:{numbers[0][1]}</color>");
+            Debug.Log($"<color=green>不規則陣列的數字 9:{numbers[1][0]}</color>");
+
+            //將8改成6
+            numbers[1][1] = 6;
+            Debug.Log($"<color=orange>第二列的第二個:{numbers[1][1]}</color>");
+
+            //不規則陣列":包含多維陣列
+            count[0] = new int[,] {{ 1, 1 }, {1,1} };
+            count[1] = new int[,]{ { 2,2,2 }, { 2,2,2 }} ;
+            Debug.Log($"<color=red>第二列的第二個:{count[1][0, 0]}</color>");
+        } 
+        #endregion
+
     }
+
+
+
 }
