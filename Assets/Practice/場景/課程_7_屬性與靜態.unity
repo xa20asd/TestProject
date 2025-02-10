@@ -129,8 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 988234074}
   - component: {fileID: 988234075}
+  - component: {fileID: 988234076}
   m_Layer: 0
-  m_Name: "\u8AB2\u7A0B_7_\u5C6C\u6027\u8207\u975C\u614B"
+  m_Name: "\u8AB2\u7A0B_7-1_\u5C6C\u6027"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,6 +165,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
+--- !u!114 &988234076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988234073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3455efe1026c7da4b91237581baf9b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  property: {fileID: 988234075}
+--- !u!1 &1772229043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772229044}
+  - component: {fileID: 1772229045}
+  m_Layer: 0
+  m_Name: "\u8AB2\u7A0B_7-2_\u975C\u614B"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772229044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772229043}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.3169999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772229045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772229043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc853a86579f21c49a471897b695f2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryWater: 10
 --- !u!1 &1857289229
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,3 +321,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1857289232}
   - {fileID: 988234074}
+  - {fileID: 1772229044}
