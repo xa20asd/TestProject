@@ -1,31 +1,32 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace honordes
 {
     /// <summary>
-    /// NPCÃş§O: NPC ¦WºÙ»P¹ï¸Ü¤º®e¸ê®Æ¡A¦³¿é¥XNPC¦WºÙ
+    /// NPCé¡åˆ¥: NPC åç¨±èˆ‡å°è©±å…§å®¹è³‡æ–™ï¼Œæœ‰è¼¸å‡ºNPCåç¨±
     /// </summary>
     public class Class_8_1_NPC :MonoBehaviour
     {
         private string name;
         private string dialogue;
 
-        //«Øºc¤l: ¨S¦³¶Ç¦^Ãş«¬¡A¦WºÙ»PÃş§O¬Û¦Pªº¤½¶}¤èªk
-        //¹w³]«Øºc¤l:¨S¦³°Ñ¼Æ
-        public Class_8_1_NPC()
-        {
-            Debug.Log("¹w³]«Øºc¤l");
-        }
-        public Class_8_1_NPC(string _name)
+        //å»ºæ§‹å­: æ²’æœ‰å‚³å›é¡å‹ï¼Œåç¨±èˆ‡é¡åˆ¥ç›¸åŒçš„å…¬é–‹æ–¹æ³•
+        //é è¨­å»ºæ§‹å­:æ²’æœ‰åƒæ•¸
+        public Class_8_1_NPC(string _name) => name = _name;
+        //{
+        //    Debug.Log("é è¨­å»ºæ§‹å­");
+        //}
+        public Class_8_1_NPC(string _name, string _dialogue)
         { 
             name = _name;
-            Debug.Log("¦³°Ñ¼Æªº«Øºc¤l");
+            dialogue = _dialogue;
+            Debug.Log("æœ‰åƒæ•¸çš„å»ºæ§‹å­");
         }
 
 
         public void LogName()
         {
-            Debug.Log($"NPCªº¦WºÙ: {name}");
+            Debug.Log($"NPCçš„åç¨±: {name}");
         }
         public void Talk()
         {

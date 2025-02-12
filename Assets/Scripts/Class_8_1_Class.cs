@@ -1,23 +1,25 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace honordes
 {
     /// <summary>
-    /// Ãş§O Class
+    /// é¡åˆ¥ Class
     /// </summary>
     public class Class_8_1_Class : MonoBehaviour
     {
-        //Ãş§O
-        //¥Î¨Ó©w¸q¤@­Óª«¥ó¥H¤Î¥¦©Ò¾Ö¦³ªº¸ê®Æ»P¥\¯à(¦¨­û)
+        //é¡åˆ¥
+        //ç”¨ä¾†å®šç¾©ä¸€å€‹ç‰©ä»¶ä»¥åŠå®ƒæ‰€æ“æœ‰çš„è³‡æ–™èˆ‡åŠŸèƒ½(æˆå“¡)
 
         private void Awake()
         {
-            //¹ê¨Ò¤Æ NPC ¨ÃÀx¦snpcJohnÅÜ¼Æ¤º
-            Class_8_1_NPC npcJohn = new Class_8_1_NPC();
-            Class_8_1_NPC npcBob = new Class_8_1_NPC("Bob");
+            //å¯¦ä¾‹åŒ– NPC ä¸¦å„²å­˜npcJohnè®Šæ•¸å…§
+            Class_8_1_NPC npcJohn = new Class_8_1_NPC("John");
+            Class_8_1_NPC npcBob = new Class_8_1_NPC("Bob", "ä½ å¥½å•Š!!");
 
             npcJohn.LogName();
+            npcJohn.Talk();
             npcBob.LogName();
+            npcBob.Talk();
         }
 
     }
