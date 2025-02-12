@@ -32,6 +32,23 @@ namespace honordes
             //呼叫靜態方法
             Class_7_2_Static.Kick();
         }
+
+        public Class_7_2_Slime slimeGreen, slimeRed;
+        
+        private void Start()
+        {
+            //非靜態成員
+            slimeGreen.hp -= 10;
+            Debug.Log($"史萊姆綠的HP: {slimeGreen.hp}");
+            slimeRed.hp -= 30;
+            Debug.Log($"史萊姆綠的HP: {slimeRed.hp}");
+
+            //靜態成員
+            //靜態成員沒辦法透過個體存取
+            //slimeGreen.moveSpeed = 2.0f;
+            Class_7_2_Slime.moveSpeed = 3.5f;
+            Debug.Log($"史萊姆移動速度: {Class_7_2_Slime.moveSpeed}");
+        }
     }
 
 }

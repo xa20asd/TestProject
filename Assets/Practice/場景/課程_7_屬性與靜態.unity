@@ -439,6 +439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   class_7_2: {fileID: 1772229045}
+  slimeGreen: {fileID: 552433616}
+  slimeRed: {fileID: 979734191}
 --- !u!1 &1857289229
 GameObject:
   m_ObjectHideFlags: 0
