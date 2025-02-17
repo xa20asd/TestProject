@@ -24,6 +24,9 @@ namespace honordes
             Debug.Log($"<color=yellow>BOSS名稱: {name}</color>");
             Debug.Log($"<color=green>BOSS的大絕招名稱: {finalMovesName}</color>");
             Debug.Log($"<color=aqua>BOSS血量: {hp}</color>");
+
+
+
         }
 
     }
