@@ -16,6 +16,20 @@ namespace honordes.tools
             Debug.Log(result);
             return result;
         }
+
+        /// <summary>
+        /// 輸出訊息並指定顏色
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
+        public static string LogMessage(object message, string color)
+        {
+            string result = $"<color={color}>{message}</color>";
+            Debug.Log(result);
+            return result;
+        }
+
     }
 
 }
