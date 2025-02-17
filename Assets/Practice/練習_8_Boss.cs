@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using honordes.tools;
+
 
 namespace honordes
 {
@@ -21,11 +23,11 @@ namespace honordes
         //顯示BOSS的資訊
         public void Bossinfo()
         {
-            Debug.Log($"<color=yellow>BOSS名稱: {name}</color>");
-            Debug.Log($"<color=green>BOSS的大絕招名稱: {finalMovesName}</color>");
-            Debug.Log($"<color=aqua>BOSS血量: {hp}</color>");
+        //    Debug.Log($"<color=yellow>BOSS名稱: {name}</color>");
+        //    Debug.Log($"<color=green>BOSS的大絕招名稱: {finalMovesName}</color>");
+        //    Debug.Log($"<color=aqua>BOSS血量: {hp}</color>");
 
-
+            Tools.LogMessage("BOSS名稱:" + name + ",BOSS的大絕招名稱:" + finalMovesName + ",BOSS血量:" + hp, "orange");
 
         }
 
