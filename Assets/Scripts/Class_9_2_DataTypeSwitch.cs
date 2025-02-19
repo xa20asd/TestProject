@@ -1,4 +1,5 @@
-﻿using honordes.tools;
+﻿using System;
+using honordes.tools;
 using UnityEngine;
 
 namespace honordes
@@ -54,6 +55,32 @@ namespace honordes
 
 
         }
+
+        private void Start()
+        {
+            //將整數轉為字串
+            int count = 99;
+            var intToString = Convert.ToString(count);
+            Tools.LogMessage(intToString.GetType(), "black");
+
+            //將布林值轉為字串
+            bool isOver = false;
+            var boolToString = Convert.ToString(isOver);
+            Tools.LogMessage(boolToString.GetType(), "green");
+
+            float move = 3.5f;
+            var floatToByte = Convert.ToByte(move);
+            Tools.LogMessage(floatToByte, "red");
+            Tools.LogMessage(floatToByte.GetType(), "red");
+
+            // true = 1, false = 0
+            bool isGrounded = true;
+            var boolToByte = Convert.ToByte(isGrounded);
+            Tools.LogMessage(boolToByte, "orange");
+            Tools.LogMessage(boolToByte.GetType(), "orange");
+        }
     }
+
+    
 
 }
