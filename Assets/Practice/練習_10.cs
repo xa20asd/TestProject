@@ -8,7 +8,7 @@ public class 練習_10 :MonoBehaviour
         var blueWater = new Water("藍水");
         var helmet = new Equipment("頭盔");
 
-        redWater.inheritinfo();
+        redWater.info();
         blueWater.info(50);
         helmet.info();
     }
@@ -17,6 +17,9 @@ public class 練習_10 :MonoBehaviour
 public class Tool
 {
     public string name;
+
+    //簡寫
+    //public Tool(string name) => name = name2;
 
     public Tool(string name1)
     { 
@@ -37,10 +40,10 @@ public class Water : Tool
     {
         Debug.Log($"使用{name}，補了{mp}點魔力");
     }
-    public void inheritinfo()
-    {
-        Debug.Log($"使用{base.name}");
-    }
+    //public void inheritinfo()
+    //{
+    //    Debug.Log($"使用{base.name}");
+    //}
 
 }
 
