@@ -8,6 +8,7 @@ namespace honordes
     public class Class_15_Interface :MonoBehaviour
     {
         public object invertoryFirst;
+        public object invertorySec;
         private void Awake()
         {
             //var prop = new Prop();
@@ -24,6 +25,13 @@ namespace honordes
             if(random == 0) invertoryFirst = new Prop();
             else if (random == 1) invertoryFirst = new Equipment();
             else if (random == 2) invertoryFirst = new Map();
+
+            int randomSec = Random.Range(0, 3);
+            Debug.Log($"隨機: {random}");
+
+            if (randomSec == 0) invertorySec = new Weapon();
+            else if (randomSec == 1) invertorySec = new Potion();
+            else if (randomSec == 2) invertorySec = new Chest();
         }
 
         private void Update()
@@ -41,6 +49,16 @@ namespace honordes
                 if (invertoryFirst is Map) ((Map)invertoryFirst).Use();
 
                 // 如果當項目種類越多之後，判斷式會越來越長...
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                // 如果第二格道具的物品有實作介面，就使用道具
+                if (invertorySec is IUse) ((IUse)invertorySec).Use();
+
+                if (invertorySec is IDestroy) ((IDestroy)invertorySec).Destroy();
+
+                //如果擴充物品，判斷式不需要添加，只需要讓物品都實作介面即可
             }
         }
 

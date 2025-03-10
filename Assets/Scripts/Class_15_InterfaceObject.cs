@@ -24,6 +24,11 @@ namespace honordes
         public void Use();
     }
 
+    public interface IDestroy
+    { 
+        public void Destroy();  
+    }
+
     // 步驟2.
     // C#單一繼承，多重實作介面
     public class Weapon : IUse
@@ -33,18 +38,29 @@ namespace honordes
             Debug.Log("使用武器，施展武器技能");
         }
     }
-    public class Potion : IUse
+    public class Potion : IUse, IDestroy
     {
+        public void Destroy()
+        {
+            Debug.Log("藥水使用完畢，刪除");
+        }
+
         public void Use()
         {
             Debug.Log("使用藥水，恢復體力");
         }
     }
-    public class Chest : IUse
+    public class Chest : IUse, IDestroy
     {
+        public void Destroy()
+        {
+            Debug.Log("寶箱使用完畢，刪除");
+        }
+
         public void Use()
         {
             Debug.Log("使用寶箱，獲得隨機道具");
         }
+
     }
 }
