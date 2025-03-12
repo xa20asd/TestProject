@@ -67,22 +67,57 @@ namespace honordes
                 numbers.Add(i);
                 Debug.Log($"測試列表內數量:{numbers.Count}");
                 Debug.Log($"測試列表內容量:{numbers.Capacity}");
-            } 
+            }
             #endregion
 
-            Stack<string> enemy = new Stack<string>();
-            enemy.Push("史萊姆");
-            enemy.Push("鎖刃龍");
-            LogStack<string>(enemy);
+            #region 堆疊
+            //堆疊: 先進後出(適合卡牌遊戲)
+            Stack<string> enemys = new Stack<string>();
+            // 放資料進入堆疊
+            enemys.Push("史萊姆");
+            enemys.Push("鎖刃龍");
+            LogStack<string>(enemys);
+            //拿資料且不移除
+            enemys.Peek();
+            LogStack<string>(enemys);
+            //拿資料並移除
+            enemys.Pop();
+            LogStack<string>(enemys);
+            //判斷是否有包含某筆資料
+            Debug.Log($"{enemys.Contains("鎖刃龍")}");
+            //清除所有資料
+            enemys.Clear();
+            LogStack<string>(enemys);
+            #endregion
 
-            enemy.Pop(1);
-
+            #region 佇列
+            //Queue 佇列: 先進先出，先放進來的資料先被拿出來(適合遊戲的攻擊順序)
+            Queue<string> player = new Queue<string>();
+            player.Enqueue("盜賊");
+            player.Enqueue("劍士");
+            player.Enqueue("法師");
+            LogQueue<string>(player);
+            //取資料不刪除，與堆疊的Peek相同
+            Debug.Log(player.Peek());
+            LogQueue<string>(player);
+            //取資料並刪除，與堆疊的Pop相同
+            Debug.Log(player.Dequeue());
+            LogQueue<string>(player); 
+            #endregion
         }
         private void LogStack<T>(Stack<T> stack)
         {
             foreach (var item in stack)
             {
                 Debug.Log($"堆疊資料:{item}");
+            }
+        }
+
+        private void LogQueue<T>(Queue<T> queue)
+        {
+            foreach (var item in queue)
+            {
+                Debug.Log($"佇列資料{item}");
             }
         }
 
