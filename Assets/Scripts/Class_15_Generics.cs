@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace honordes
 {
@@ -41,6 +42,24 @@ namespace honordes
 
             var player2 = new DataPlayer<string>();
             player2.data = "玩家2號";
+        }
+
+        private void Start()
+        {
+            var player = new Player();
+            var enemy = new Enemy();
+            var attackEvent = new AttackEvent<Player, Enemy>();
+            attackEvent.Attack(player, enemy);
+
+            var hp = new Hp();
+            var attack = new Attack();
+            hp.Increase(10.5f);
+            attack.Increase(50);
+            hp.Increase(3.75f);
+
+            var checker = new CheckValue<Hp,float>();
+            checker.Check(hp);
+
         }
 
         #region 方法區域
@@ -96,6 +115,7 @@ namespace honordes
         #endregion
     }
 
+    #region 泛型類別
     public class DataPlayer<T>
     {
         public T data;
@@ -103,6 +123,56 @@ namespace honordes
         public void LogData(T data)
         {
             Debug.Log(data);
+        }
+    }
+    public class Player { }
+    public class Enemy { }
+
+    public class AttackEvent<T, U>
+    {
+        public void Attack(T attacker, U defender)
+        {
+            Debug.Log($"{attacker} 攻擊 {defender}");
+        }
+    }
+    #endregion
+
+    #region 泛型介面
+    //泛型介面
+    public interface IStat<T>
+    {
+        T value { get; set; }               //該狀態的值
+        public void Increase(T amount);     //增加該狀態
+    }
+
+    public class Hp : IStat<float>
+    {
+        public float value { get; set; }
+        public void Increase(float amount)
+        {
+            value += amount;
+            Debug.Log($"血量: {value}");
+        }
+    }
+
+    public class Attack : IStat<int>
+    {
+        public int value { get; set; }
+        public void Increase(int amount)
+        {
+            value += amount;
+            Debug.Log($"攻擊力: {value}");
+        }
+    }
+    #endregion
+
+    //泛型約束: T 必須實作 IStat<U> 介面
+    //U 可以是任何類型
+    public class CheckValue<T, U> where T : IStat<U>
+    {
+        public void Check(T stat)
+        {
+            Debug.Log($"狀態的值:{stat.value}");
         }
     }
 }
