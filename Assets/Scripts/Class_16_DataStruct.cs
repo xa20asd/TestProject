@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace honordes
 {
     /// <summary>
-    /// 
+    /// 資料結構
     /// </summary>
     public class Class_16_DataStruct :MonoBehaviour
     {
@@ -102,8 +102,59 @@ namespace honordes
             LogQueue<string>(player);
             //取資料並刪除，與堆疊的Pop相同
             Debug.Log(player.Dequeue());
-            LogQueue<string>(player); 
+            LogQueue<string>(player);
             #endregion
+
+            #region 鏈結串列
+            // LinkedList 鏈結串列
+            string[] skillArray = new string[] { "火球", "冰錐" };
+            LinkedList<string> skills = new LinkedList<string>(skillArray);
+            LogLinkedList<string>(skills);
+            skills.AddLast("落雷");
+            LogLinkedList<string>(skills);
+            skills.AddFirst("岩封");
+            LogLinkedList<string>(skills);
+
+            // 在火球後面添加毒霧
+            LinkedListNode<string> skillFire = skills.Find("火球");
+            skills.AddAfter(skillFire, "毒霧");
+            // 在火球前面添加瞬移
+            skills.AddBefore(skillFire, "瞬移");
+            LogLinkedList<string>(skills);
+
+            #endregion
+
+            #region 排序集合
+            // 自動排序並且不重複的集合(由小到大的排序)
+            SortedSet<int> counts = new SortedSet<int> { 9, 33, 19, 1, 95, 0 };
+            LogSortedSet<int>(counts);
+            counts.Add(77);
+            counts.Add(111);
+            counts.Add(3);
+            LogSortedSet<int>(counts);
+            Debug.Log($"最大: {counts.Max}");
+            Debug.Log($"最小: {counts.Min}");
+
+            SortedSet<int> lv = new SortedSet<int> { 43, 32, 5, 12, 4 };
+            // 交集
+            counts.IntersectWith(lv);
+            LogSortedSet<int>(counts);
+            // 差集
+            counts.ExceptWith(lv);
+            LogSortedSet<int>(counts);
+
+            SortedSet<int> countset1 = new SortedSet<int> { 9, 2, 80, 1 };
+            SortedSet<int> countset2 = new SortedSet<int> { 9, 2 };
+            //countset1.IntersectWith(countset2);
+            countset1.ExceptWith(countset2);
+            LogSortedSet<int>(countset1);
+            #endregion
+
+            Dictionary<int, string> deck = new Dictionary<int, string>()
+            {
+                {10, "真紅眼黑龍" },{3, "落穴" },{5, "魔法少年賈修" }
+            };
+            LogDictionary<int, string>(deck);
         }
         private void LogStack<T>(Stack<T> stack)
         {
@@ -119,6 +170,35 @@ namespace honordes
             {
                 Debug.Log($"佇列資料{item}");
             }
+        }
+
+        private void LogLinkedList<T>(LinkedList<T> linkedList)
+        {
+            foreach (var item in linkedList)
+            {
+                Debug.Log(item);
+            }
+            Debug.Log("------------------");
+        }
+
+        private void LogSortedSet<T>(SortedSet<T> set)
+        {
+            foreach (var item in set)
+            {
+                Debug.Log(item);
+               
+            }
+            Debug.Log("-------------");
+        }
+
+        private void LogDictionary<T, U>(Dictionary<T, U> dict)
+        {
+            foreach (var item in dict)
+            {
+                Debug.Log($"<color=orange>卡牌編號{item.Key}</color>");
+                Debug.Log($"<color=orange>卡牌編號{item.Value}</color>");
+            }
+            Debug.Log("---------------");
         }
 
     }
