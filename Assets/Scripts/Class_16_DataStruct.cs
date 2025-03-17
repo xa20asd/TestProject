@@ -150,11 +150,42 @@ namespace honordes
             LogSortedSet<int>(countset1);
             #endregion
 
+            #region 字典
             Dictionary<int, string> deck = new Dictionary<int, string>()
             {
                 {10, "真紅眼黑龍" },{3, "落穴" },{5, "魔法少年賈修" }
             };
             LogDictionary<int, string>(deck);
+            deck.Add(7, "死者甦醒");
+            Debug.Log($"是否有編號3資料: {deck.ContainsKey(3)}");
+            Debug.Log($"是否有羽毛掃資料: {deck.ContainsValue("羽毛掃")}"); 
+            #endregion
+
+            // 保持排序並且不會有重複的鍵
+            SortedList<string, int> board = new SortedList<string, int>();
+            board.Add("Apple", 87);
+            board.Add("Banana", 90);
+            board.Add("Canada", 99);
+            //board.Add("Canada", 57);
+            LogSortedList<string, int>(board);
+
+            //// 保持排序並且不會有重複鍵的字典
+            SortedDictionary<string, int> scores = new SortedDictionary<string, int>();
+            scores.Add("Apple", 87);
+            scores.Add("Banana", 90);
+            scores.Add("Canada", 99);
+            //scores.Add("Canada", 99);
+            LogSortedDictionary<string, int>(scores);
+
+            // SortedList 與 SortedDictionary 的差異
+            // 1.SortedList 是使用陣列方式儲存，比較省RAM
+            // 2.SortedDictionary 是使用樹狀結構方式儲存，比較佔RAM
+            // 3.SortedList 可以使用索引值存取[0]
+            Debug.Log(board.Keys[0]);
+            
+            // 4.SortedList 大量資料增減時比較佔RAM
+            // 如果資料不需要頻繁地增減建議使用SortedList反之建議 SortedDictionary
+
         }
         private void LogStack<T>(Stack<T> stack)
         {
@@ -197,6 +228,24 @@ namespace honordes
             {
                 Debug.Log($"<color=orange>卡牌編號{item.Key}</color>");
                 Debug.Log($"<color=orange>卡牌編號{item.Value}</color>");
+            }
+            Debug.Log("---------------");
+        }
+
+        private void LogSortedList<T, U>(SortedList<T, U> list)
+        {
+            foreach (var item in list)
+            {
+                Debug.Log($"{item.Key}的分數: {item.Value}");
+            }
+            Debug.Log("---------------");
+        }
+
+        private void LogSortedDictionary<T, U>(SortedDictionary<T, U> list)
+        {
+            foreach (var item in list)
+            {
+                Debug.Log($"<color=aqua>{item.Key}的分數: {item.Value}</color>");
             }
             Debug.Log("---------------");
         }
