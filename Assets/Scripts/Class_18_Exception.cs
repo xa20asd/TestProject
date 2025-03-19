@@ -10,6 +10,7 @@ namespace honordes
     {
         private void Awake()
         {
+            #region 例外處理
             Debug.Log($"{Division(8, 4)}");
             Debug.Log($"{Division(3, 9)}");
             Debug.Log($"{Division(7, 0)}");
@@ -18,8 +19,33 @@ namespace honordes
             Debug.Log($"{GetScores(8)}");
 
             SetEnemy();
+            #endregion
+
+
+            try
+            {
+                Damage(35);
+                Damage(70);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+
+            try
+            {
+                Cure(30);
+                Cure(-10);
+            }
+            catch (CureValueLowerZeroException e) //自訂例外
+            {
+
+                Debug.Log(e.Message);
+            }
+
         }
 
+        #region 例外處理
         /// <summary>
         /// 除法
         /// </summary>
@@ -59,7 +85,7 @@ namespace honordes
             {
                 Debug.Log("發生例外");
                 return null;
-                
+
             }
             catch (IndexOutOfRangeException e)
             {
@@ -85,5 +111,40 @@ namespace honordes
                 Debug.Log($"發生例外: {e.Message}");
             }
         }
+        #endregion'
+
+        private float hp = 100.0f;
+
+        private void Damage(float damage)
+        { 
+            hp -= damage;
+            if (hp < 0)
+            {
+                //自訂例外
+                throw new Exception("血量小於零");
+            }
+            else
+            {
+                Debug.Log($"血量:{hp}");
+            }
+        }
+
+        private void Cure(float cure)
+        {
+            if (cure < 0)
+            {
+                //throw new Exception("治療值低於零");
+                throw new CureValueLowerZeroException("治療值低於零");
+            }
+            else 
+            {
+                hp += cure;
+            }
+        }
+    }
+
+    public class CureValueLowerZeroException : Exception
+    {
+        public CureValueLowerZeroException(string message) : base(message) { }
     }
 }
