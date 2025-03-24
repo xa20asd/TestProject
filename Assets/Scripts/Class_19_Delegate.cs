@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace honordes
 {
@@ -83,6 +84,22 @@ namespace honordes
         private DelegateCombine<float> delegateCombineFloat;
         private DelegateCombine<int> delegateCombineInt;
 
+        // Func
+        // 可以存放有傳回並且有0個參數以上的方法
+        // 宣告一個委派，有一個參數 float ，並且傳回值為float
+        // <參數，傳回值>
+        private Func<float, float> funcCalc;
+
+        // Action
+        // 可以存放無傳回並且有0個參數以上的方法
+        // 宣告一個委派，沒有參數也沒有傳回值
+        private Action actionMethod;
+
+        // Predicate
+        // 可以存放有布林值傳回並且只有1個參數的方法
+        // 宣告一個委派，有一個參數float，並且傳回值為bool
+        private Predicate<float> predicate;
+
         // 4.呼叫委派
         private void Start()
         {
@@ -94,6 +111,7 @@ namespace honordes
             delegateMethod();               // 呼叫委派 
             #endregion
 
+            #region 多播委派與泛型委派
             calculate += Add;
             calculate += Sub;
             calculate += Mul;
@@ -106,12 +124,55 @@ namespace honordes
             delegateCombineFloat(5.5f);
             delegateCombineInt = Combine<int>;
             delegateCombineInt(999);
-        }
+            #endregion
+
+            #region 匿名方法
+            //匿名方法
+            //delegate (參數) {陳述式}
+            DelegateMethod anonymousMethod = delegate () { };
+            Calculate anonymousCalc = delegate (float a, float b) { return a * b; };
+
+            //簡寫方式
+            DelegateMethod anonymousMethod2 = () => { };
+            Calculate anonymousCalc2 = (a, b) => { return a * b; };
+
+            CalculateNumber(Add, 3, 7);
+            CalculateNumber(anonymousCalc, 3, 7);
+            CalculateNumber(anonymousCalc2, 3, 7);
+
+            //在參數上面使用匿名方法
+            CalculateNumber(delegate (float a, float b) { return a / b; }, 12, 4);
+            CalculateNumber((a, b) => { return a / b; }, 12, 4);
+            #endregion
+
+            funcCalc = delegate (float x) { return x * 10; };
+            Debug.Log($"Func 委派: {funcCalc(3.5f)}");
+
+            actionMethod = delegate () { Debug.Log("Action 委派"); };
+            actionMethod();
+
+            predicate = delegate (float x ) { return x > 0; };
+            Debug.Log($"Predicate 委派: 7 是否大於零 - {predicate(7)}");
+
+            // Lambda 運算子 =>
+            // (參數) => {陳述式}
+            Action action = () => { Debug.Log("Lambda練習"); };
+            action();
+
+            Func<int, string> func = (x) => { return $"Lambda練習，數字: {x}"; };
+            Debug.Log($"{func(77)}");
+
+            Predicate<string> predicateTest = (x) => { return x.Length > 0; };
+            Debug.Log($"{predicateTest("菇菇寶貝")}");
+        } 
+
+        
 
         // 委派: 將方法當作參數
         private void CalculateNumber(Calculate calculate, float a ,float b)
         {
             var result = calculate(a, b);
+            Debug.Log(result);
         }
     }
 }
