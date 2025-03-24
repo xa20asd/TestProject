@@ -164,6 +164,7 @@ namespace honordes
 
             Predicate<string> predicateTest = (x) => { return x.Length > 0; };
             Debug.Log($"{predicateTest("菇菇寶貝")}");
+
         } 
 
         
